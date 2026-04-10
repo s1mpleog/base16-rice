@@ -1,0 +1,160 @@
+//config.jsonc
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 4,
+  "modules-left": [
+    "niri/workspaces",
+    "idle_inhibitor"
+  ],
+  "modules-center": [
+    "niri/window"
+  ],
+  "modules-right": [
+    "network",
+    "wireplumber",
+    "backlight",
+    // "cpu",
+    // "custom/sep5",
+    "memory",
+    // "custom/disk",
+    // "custom/sep7",
+    "battery",
+    "clock",
+    "tray"
+  ],
+  "custom/logo": {
+    "format": "Arch",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "format-icons": {
+      // "1": "1",
+      // "2": "2",
+      // "3": "3",
+      // "4": "4",
+      // "5": "伍",
+      // "6": "陸",
+      // "7": "柒",
+      // "8": "捌",
+      // "9": "玖",
+      // "10": "拾",
+      // "default": "〇"
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+  "niri/window": {
+    "format": "{title}",
+    "max-length": 50,
+    "separate-outputs": true,
+    "rewrite": {
+      "": "Desktop"
+    }
+  },
+  "clock": {
+    "format": "󰥔 {:%I:%M %p}",
+    "format-alt": "󰥔 {:%a, %d %b %Y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "left",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ebbcba'><b>{}</b></span>",
+        "days": "<span color='#e0def4'><b>{}</b></span>",
+        "weeks": "<span color='#31748f'><b>W{}</b></span>",
+        "weekdays": "<span color='#f6c177'><b>{}</b></span>",
+        "today": "<span color='#eb6f92'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "tooltip": true,
+    "interval": 2
+  },
+  "memory": {
+    "format": "󰍛 {used:0.1f}G/{total:0.1f}G",
+    "tooltip-format": "{percentage}% used"
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "tooltip-format": "Brightness: {percent}%"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "tooltip-format": "{timeTo}, {capacity}%"
+  },
+  "network": {
+    "format-wifi": "󰤨 {signalStrength}%",
+    "format-ethernet": "󰈀 Connected",
+    "format-disconnected": "󰤭 Down",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}/{cidr}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}",
+    "on-click": "nm-connection-editor"
+  },
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 {volume}%",
+    "format-icons": {
+      "headphone": "󰋋",
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "pavucontrol",
+    "tooltip-format": "{node_name}"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰅶",
+      "deactivated": "󰾪"
+    },
+    "tooltip-format-activated": "Idle inhibitor active",
+    "tooltip-format-deactivated": "Idle inhibitor inactive"
+  },
+  "custom/disk": {
+    "format": "󰋊 {}",
+    "interval": 30,
+    "exec": "df -h / | awk 'NR==2 {print $4}'"
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 6
+  }
+}

@@ -1,0 +1,44 @@
+include "monitors_battery.kdl"
+include "input.kdl"
+include "autostart.kdl"
+include "animations.kdl"
+include "windowrules.kdl"
+include "keybinds.kdl"
+include "amdgpu.kdl"
+include "general.kdl"
+include "decorations.kdl"
+include "env.kdl"
+include "recent-windows.kdl"
+
+
+// layout {
+//     border {
+//             // off
+//             // active-color   "#51afef"
+//             // inactive-color "#abb2bf"
+//             urgent-color   "#ff6c6b"
+//
+//             width 3
+//             active-color "#eb6f92"
+//             inactive-color "#505050"
+//
+//             // Color of the border around windows that request your attention.
+//             // urgent-color "#9b0000"
+//
+//             // Gradients can use a few different interpolation color spaces.
+//             // For example, this is a pastel rainbow gradient via in="oklch longer hue".
+//             //
+//             // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
+//
+//             // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+//         }
+// }
+
+
+include "colors.kdl"
+
+layout {
+    border {
+        width 3
+    }
+}

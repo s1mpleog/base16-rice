@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=NiriBattery
+Comment=A scrollable-tiling Wayland compositor
+Exec=niri-session -c /home/s1mple/.config/niri/config_battery.kdl
+Type=Application
+DesktopNames=niri

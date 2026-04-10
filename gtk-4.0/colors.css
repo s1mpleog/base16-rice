@@ -1,0 +1,64 @@
+/* accent       → blue   #6684e1  */
+/* accent_bg    → base01 #292824  */
+/* accent_fg    → base00 #20201d  */
+/* destructive  → red    #d73737  */
+/* success      → green  #60ac39  */
+/* warning      → yellow #ae9513  */
+/* window_bg    → base00 #20201d  */
+/* window_fg    → base05 #a6a28c  */
+/* card_bg      → base01 #292824  */
+/* sidebar_bg   → base00 #20201d  (slightly darker feel) */
+
+@define-color accent_color #6684e1;
+@define-color accent_bg_color #292824;
+@define-color accent_fg_color #20201d;
+@define-color destructive_color #d73737;
+@define-color destructive_bg_color #292824;
+@define-color destructive_fg_color #a6a28c;
+@define-color success_color #60ac39;
+@define-color success_bg_color #292824;
+@define-color success_fg_color #a6a28c;
+@define-color warning_color #ae9513;
+@define-color warning_bg_color #292824;
+@define-color warning_fg_color #a6a28c;
+@define-color error_color #d73737;
+@define-color error_bg_color #292824;
+@define-color error_fg_color #a6a28c;
+@define-color window_bg_color #20201d;
+@define-color window_fg_color #a6a28c;
+@define-color view_bg_color #20201d;
+@define-color view_fg_color #a6a28c;
+@define-color headerbar_bg_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color headerbar_border_color @window_bg_color;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_shade_color @window_bg_color;
+@define-color card_bg_color #292824;
+@define-color card_fg_color #a6a28c;
+@define-color card_shade_color rgba(0, 0, 0, 0.07);
+@define-color dialog_bg_color @card_bg_color;
+@define-color dialog_fg_color @card_fg_color;
+@define-color popover_bg_color @card_bg_color;
+@define-color popover_fg_color @card_fg_color;
+@define-color shade_color rgba(0, 0, 0, 0.36);
+@define-color scrollbar_outline_color rgba(126, 122, 104, 0.5);
+@define-color sidebar_bg_color #20201d;
+@define-color secondary_sidebar_bg_color @sidebar_bg_color;
+@define-color sidebar_backdrop_color @sidebar_bg_color;
+@define-color secondary_sidebar_backdrop_color @sidebar_bg_color;
+
+.navigation-sidebar {
+    background-color: @sidebar_bg_color;
+    color: @window_fg_color;
+}
+
+headerbar.default-decoration {
+    margin-bottom: 50px;
+    margin-top: -100px;
+}
+
+/* rm -rf window shadows */
+window.csd,
+window.csd decoration {
+    box-shadow: none;
+}

@@ -1,0 +1,16 @@
+// Add lines like this to spawn processes at startup.
+// Note that running niri as a session supports xdg-desktop-autostart,
+// which may be more convenient to use.
+// See the binds section below for more spawn examples.
+
+// This line starts waybar, a commonly used bar for Wayland compositors.
+// spawn-at-startup "waybar" "-c" "/home/s1mple/.config/waybar/config-niri.json"
+spawn-at-startup "waybar" "-c" "/home/s1mple/.config/waybar/config-niri.json" "-s" "/home/s1mple/.config/waybar/style_base16.css"
+spawn-at-startup "mako"
+// spawn-at-startup "swww-daemon"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "wl-clip-persist --clipboard regular"
+spawn-sh-at-startup "/home/s1mple/.config/niri/swayidle.sh"
+
+// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
+// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"

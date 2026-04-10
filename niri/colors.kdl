@@ -1,0 +1,7 @@
+layout {
+    border {
+        active-color   "#b4d088"
+        inactive-color "#8f9285"
+        urgent-color   "#ffb4ab"
+    }
+}

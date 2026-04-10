@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Configuration
+readonly WALL_DIR="${HOME}/Pictures/Wallpapers"
+readonly THEME="${1:-default}"
+readonly CACHE_DIR="${HOME}/.cache/jp/${THEME}"
+readonly ROFI_CMD="rofi -dmenu -theme ~/.config/rofi/scripts/wallpaper/style.rasi"
+readonly THUMBNAIL_SIZE=500
+
+mkdir -p "${CACHE_DIR}"
+
+# Generate thumbnail cache in parallel
+generate_thumbnails() {
+  local imagen nombre_archivo cache_file
+  local pids=()
+  for imagen in "${WALL_DIR}"/*.{jpg,jpeg,png,webp}; do
+    [[ -f "${imagen}" ]] || continue
+    nombre_archivo=$(basename "${imagen}")
+    cache_file="${CACHE_DIR}/${nombre_archivo%.*}.png"
+    if [[ ! -f "${cache_file}" ]]; then
+      magick "${imagen}" \
+        -strip \
+        -thumbnail "${THUMBNAIL_SIZE}x${THUMBNAIL_SIZE}^" \
+        -gravity center \
+        -extent "${THUMBNAIL_SIZE}x${THUMBNAIL_SIZE}" \
+        "PNG:${cache_file}" &
+      pids+=($!)
+    fi
+  done
+  # Wait for all parallel magick jobs
+  for pid in "${pids[@]+"${pids[@]}"}"; do
+    wait "${pid}"
+  done
+}
+
+# Display wallpaper selector
+select_wallpaper() {
+  find "${WALL_DIR}" -maxdepth 1 -type f \
+    \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) \
+    -exec basename {} \; | sort | while read -r filename; do
+    echo -en "${filename}\x00icon\x1f${CACHE_DIR}/${filename%.*}.png\n"
+  done | ${ROFI_CMD}
+}
+
+apply_theme() {
+  local wallpaper="${1}"
+  local done_flag="/tmp/matugen_done_$$"
+
+  kitty --title "Pick Source Color" \
+    -o "initial_window_width=420" \
+    -o "initial_window_height=180" \
+    -- bash -c "matugen image '${wallpaper}' && touch '${done_flag}'"
+
+  if [[ -f "${done_flag}" ]]; then
+    rm "${done_flag}"
+    return 0
+  fi
+  return 1
+}
+
+main() {
+  generate_thumbnails
+
+  local wall_selection
+  wall_selection=$(select_wallpaper)
+  [[ -n "${wall_selection}" ]] || exit 1
+
+  local full_path="${WALL_DIR}/${wall_selection}"
+
+  # apply_theme "${full_path}" || exit 1
+
+  awww img "${full_path}" \
+    --transition-type grow \
+    --transition-pos center \
+    --transition-duration 0.8
+
+  notify-send -u normal \
+    -i "${CACHE_DIR}/${wall_selection%.*}.png" \
+    "✨ Wallpaper Applied" \
+    "${wall_selection%.*}"
+}
+
+main "$@"

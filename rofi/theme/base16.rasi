@@ -1,0 +1,14 @@
+* {
+    background:       #20201dff;    /* base00 */
+    foreground:       #a6a28cff;    /* base05 */
+    accent:           #ae9513ff;    /* yellow */
+    background-tb:    #60ac39ff;    /* green */
+    border-tb:        #ae9513ff;    /* yellow */
+    border:           #6e6b5eff;    /* base02 */
+    selected:         #6684e1ff;    /* blue */
+    button:           #292824ff;    /* base01 */
+    button-selected:  #ae9513ff;    /* yellow */
+    active:           #1fad83ff;    /* aqua */
+    urgent:           #d73737ff;    /* red */
+    font: "MapleMonoNF 11";
+}

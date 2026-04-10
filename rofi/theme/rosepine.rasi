@@ -1,0 +1,14 @@
+* {
+    background:       #191724ff;   /* base      */
+    foreground:       #e0def4ff;   /* text      */
+    accent:           #eb6f92ff;   /* love      */
+    background-tb:    #1f1d2eff;   /* surface   */
+    border-tb:        #26233aff;   /* overlay   */
+    border:           #403d52ff;   /* highlight med */
+    selected:         #26233aff;   /* overlay — subtle lift instead of pine */
+    button:           #26233aff;   /* overlay   */
+    button-selected:  #eb6f92ff;   /* love      */
+    active:           #f6c177ff;   /* gold      */
+    urgent:           #eb6f92ff;   /* love      */
+    font: "MonaspaceNeon Nerd Font 12";
+}

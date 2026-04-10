@@ -1,0 +1,14 @@
+* {
+    background:       #1a1c16ff;
+    foreground:       #e2e3d8ff;
+    accent:           #b4d088ff;
+    background-tb:    #1e2019ff;
+    border-tb:        #292b23ff;
+    border:           #45483dff;
+    selected:         #292b23ff;
+    button:           #292b23ff;
+    button-selected:  #b4d088ff;
+    active:           #a0d0caff;
+    urgent:           #ffb4abff;
+    font: "MonaspaceNeon Nerd Font 12";
+}

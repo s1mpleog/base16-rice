@@ -1,0 +1,103 @@
+/* ==================== ATELIER DUNE DARK PALETTE ====================
+   base00: #20201d   base01: #292824   base02: #6e6b5e   base03: #7d7a68
+   base04: #999580   base05: #a6a28c   base06: #e8e4cf   base07: #fefbec
+   red:    #d73737   orange: #b65611   yellow: #ae9513   green:  #60ac39
+   aqua:   #1fad83   blue:   #6684e1   purple: #b854d4   brown:  #d43552
+   ================================================================== */
+
+* {
+    font-family: "MapleMonoNF", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    border: none;
+    min-height: 0;
+    transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+window#waybar {
+    background-color: #20201d;                        /* base00 */
+    color: #a6a28c;                                   /* base05 */
+    padding: 4px 12px;
+    margin: 8px 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(126, 122, 104, 0.28);      /* base03 @ 28% */
+}
+
+/* ==================== WORKSPACES ==================== */
+#workspaces {
+    padding: 2px 6px;
+}
+#workspaces button {
+    padding: 7px 15px;
+    margin: 0 4px;
+    color: #7d7a68;                                   /* base03 */
+    font-weight: 700;
+}
+#workspaces button.active {
+    background-color: #6e6b5e;                        /* blue */
+    color: #20201d;                                   /* base00 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+#workspaces button.occupied:not(.active) {
+    color: #6e6b5e;                                   /* base02 */
+}
+#workspaces button:hover {
+    background-color: #292824;                        /* base01 */
+    color: #a6a28c;                                   /* base05 */
+}
+
+/* ==================== WINDOW TITLE ==================== */
+#window {
+    padding: 6px 18px;
+    background-color: #20201d;                        /* base00 */
+    color: #a6a28c;                                   /* base05 */
+    margin: 0 8px;
+}
+
+/* ==================== ALL MODULES ==================== */
+#cpu, #memory, #battery, #backlight, #network, #custom-disk,
+#idle_inhibitor, #wireplumber, #clock, #tray {
+    padding: 6px 14px;
+    margin: 2px 5px;
+    background-color: #20201d;                        /* base00 */
+    color: #999580;                                   /* base04 */
+}
+
+#cpu               { color: #1fad83; }               /* aqua */
+#memory            { color: #6684e1; }               /* blue */
+#backlight         { color: #ae9513; }               /* yellow */
+#battery           { color: #60ac39; }               /* green */
+#network           { color: #1fad83; }               /* aqua */
+#custom-disk       { color: #b854d4; }               /* purple */
+#clock             { color: #ae9513; }               /* yellow */
+#wireplumber       { color: #b65611; }               /* orange */
+#idle_inhibitor    { color: #7d7a68; }               /* base03 */
+
+#battery.charging               { color: #60ac39; }  /* green */
+#battery.warning:not(.charging) { color: #ae9513; }  /* yellow */
+#battery.critical:not(.charging) {
+    color: #d73737;                                   /* red */
+    animation: blink 0.85s ease-in-out infinite alternate;
+}
+
+#network.disconnected           { color: #d73737; }  /* red */
+#wireplumber.muted              { color: #7d7a68; }  /* base03 */
+#idle_inhibitor.activated       { color: #ae9513; }  /* yellow */
+
+#tray {
+    padding: 4px 12px;
+}
+
+/* ==================== TOOLTIP ==================== */
+tooltip {
+    background-color: #292824;                        /* base01 */
+    border: 1px solid #6e6b5e;                        /* base02 */
+    border-radius: 12px;
+    color: #a6a28c;                                   /* base05 */
+    padding: 10px 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes blink {
+    to { color: #a6a28c; }                            /* base05 */
+}
