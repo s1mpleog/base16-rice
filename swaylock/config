@@ -1,0 +1,42 @@
+# swaylock — atelier dune (base16)
+
+# behavior
+ignore-empty-password
+show-failed-attempts
+daemonize
+
+# background
+#color=20201d        # base00 — darkest bg
+image=/home/s1mple/Pictures/Wallpapers/wallhaven-og58v9_1920x1080.png
+scaling=fill
+
+# ring
+ring-color=6e6b5e    # base03 — muted ring idle
+ring-ver-color=b65611 # base09 — orange, verifying
+ring-wrong-color=d73737# base08 — red, wrong
+ring-clear-color=60ac39# base0b — green, cleared
+
+# key input indicator
+key-hl-color=b65611  # base09 — orange highlight
+bs-hl-color=d73737   # base08 — red on backspace
+
+# line (ring border)
+line-color=20201d    # match bg — invisible seam
+line-ver-color=20201d
+line-wrong-color=20201d
+line-clear-color=20201d
+
+# text
+text-color=a6a28c   # base05 — default fg
+text-ver-color=b65611
+text-wrong-color=d73737
+text-clear-color=60ac39
+
+# inside fill
+inside-color=292723  # base01 — slightly lifted
+inside-ver-color=292723
+inside-wrong-color=292723
+inside-clear-color=292723
+
+# separator
+separator-color=00000000# fully transparent

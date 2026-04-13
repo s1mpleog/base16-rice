@@ -1,0 +1,13 @@
+[general]
+import = ["~/.config/alacritty/themes/base_16_atelier_dune.toml"]
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "NotoSansMNerdFontMono" # Replace with your chosen font
+style = "Medium"
+
+[window]
+padding = { x = 10, y = 10 } # Horizontal and vertical padding
+dynamic_padding = true       # Keeps padding even on both sides

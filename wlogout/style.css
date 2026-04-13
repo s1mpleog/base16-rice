@@ -1,0 +1,88 @@
+/* atelier dune — base16 */
+
+window {
+    background-color: #20201d;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+button {
+    color:               #6e6b5e;
+    background-color:    #20201d;
+    border-style:        solid;
+    border-width:        1px;
+    border-color:        #2d2b27;
+    border-radius:       4px;
+    margin:              5px;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    background-size:     64px 64px;
+    transition:          all 0.15s ease;
+}
+
+button:focus,
+button:hover {
+    background-color: #292723;
+    border-color:     #6e6b5e;
+    outline-style:    none;
+}
+
+#lock {
+    background-image: url("/usr/share/wlogout/icons/lock.png");
+    color: #a6a28c;
+}
+#lock:hover {
+    background-image: url("/usr/share/wlogout/icons/lock.png");
+    border-color: #6684e1;
+    color: #6684e1;
+}
+
+#logout {
+    background-image: url("/usr/share/wlogout/icons/logout.png");
+    color: #a6a28c;
+}
+#logout:hover {
+    background-image: url("/usr/share/wlogout/icons/logout.png");
+    border-color: #b65611;
+    color: #b65611;
+}
+
+#suspend {
+    background-image: url("/usr/share/wlogout/icons/suspend.png");
+    color: #a6a28c;
+}
+#suspend:hover {
+    background-image: url("/usr/share/wlogout/icons/suspend.png");
+    border-color: #60ac39;
+    color: #60ac39;
+}
+
+#hibernate {
+    background-image: url("/usr/share/wlogout/icons/hibernate.png");
+    color: #a6a28c;
+}
+#hibernate:hover {
+    background-image: url("/usr/share/wlogout/icons/hibernate.png");
+    border-color: #1fad83;
+    color: #1fad83;
+}
+
+#shutdown {
+    background-image: url("/usr/share/wlogout/icons/shutdown.png");
+    color: #a6a28c;
+}
+#shutdown:hover {
+    background-image: url("/usr/share/wlogout/icons/shutdown.png");
+    border-color: #d73737;
+    color: #d73737;
+}
+
+#reboot {
+    background-image: url("/usr/share/wlogout/icons/reboot.png");
+    color: #a6a28c;
+}
+#reboot:hover {
+    background-image: url("/usr/share/wlogout/icons/reboot.png");
+    border-color: #b65611;
+    color: #b65611;
+}
